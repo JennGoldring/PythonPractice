@@ -7,4 +7,3 @@ while True:
     print(todo.title())
     todos.append(todo)
 
-# this is just a practice
