@@ -6,4 +6,3 @@ Annoyed
 Strange
 Did this work
 finally
-why is my file still red?
