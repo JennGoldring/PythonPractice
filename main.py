@@ -21,11 +21,10 @@ while True:
             todos = file.readlines()
             file.close()
 
-            new_todos = []
-
-            for item in todos:
-                new_item = item.strip('\n')
-
+            for index, item in enumerate(todos):
+                item = item.strip('\n')
+                row = f"{index + 1}-{item}"
+                print(row)
 
         case 'edit':
             number = int(input("Number of the todo to edit: "))
