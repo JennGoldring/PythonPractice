@@ -15,7 +15,7 @@ while True:
                 file.writelines(todos)
 
         case 'show':
-            with open('todos.txt', 'w') as file:
+            with open('todos.txt', 'r') as file:
                 todos = file.readlines()
 
             for index, item in enumerate(todos):
@@ -26,11 +26,31 @@ while True:
         case 'edit':
             number = int(input("Number of the todo to edit: "))
             number = number - 1
+
+            with open('todos.txt', 'r') as file:
+                todos = file.readlines()
+
             new_todo = input("Enter new todo: ")
-            todos[number] = new_todo
+            todos[number] = new_todo + '\n'
+
+            with open('todos.txt', 'w') as file:
+                file.writelines(todos)
+
         case 'complete':
             number = int(input("Number of the todo to complete: "))
-            todos.pop(number - 1)
+
+            with open('todos.txt', 'r') as file:
+                file.readlines()
+            index = number -1
+            todo_to_remove = todos[index].strip('\n')
+            todos.pop(index)
+
+            with open('todos.txt', 'w') as file:
+                file.writelines(todos)
+
+            message = f"Todo {todo_to_remove} was removed from the list."
+            print(message)
+
         case 'exit':
             break
 
