@@ -45,8 +45,18 @@
 # except ValueError:
 #     print("You need to enter a number. Run the program again.")
 
-colors = [11, 34, 98, 43, 45, 54, 54]
+# colors = [11, 34, 98, 43, 45, 54, 54]
+#
+# for color in colors:
+#     if color > 50:
+#         print(color)
 
-for color in colors:
-    if color > 50:
-        print(color)
+def get_max():
+    grades = [9.6, 9.2, 9.7]
+    maximum = max(grades)
+    minimum = min(grades)
+    both = f"Max: {maximum}, Min: {minimum}"
+    return both
+
+
+print(get_max())
