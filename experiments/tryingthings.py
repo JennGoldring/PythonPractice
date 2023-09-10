@@ -51,12 +51,28 @@
 #     if color > 50:
 #         print(color)
 
-def get_max():
-    grades = [9.6, 9.2, 9.7]
-    maximum = max(grades)
-    minimum = min(grades)
-    both = f"Max: {maximum}, Min: {minimum}"
-    return both
+#
 
+def strength(password):
+    result = {}
 
-print(get_max())
+    if len(password) >= 8:
+        result["length"] = True
+    else:
+        result["length"] = False
+
+    digit = False
+    uppercase = False
+    for i in password:
+        if i.isdigit():
+            digit = True
+        if i.isupper():
+            uppercase = True
+    result["digits"] = digit
+    result["upper-case"] = uppercase
+
+    if all(result.values()):
+        return("Strong Password")
+    else:
+        return("Weak Password")
+
