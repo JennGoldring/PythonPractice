@@ -3,4 +3,3 @@ walk the dog
 call the trainer
 go to store
 code
-type
