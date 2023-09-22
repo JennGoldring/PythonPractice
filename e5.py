@@ -8,6 +8,6 @@ with open("weather.csv", 'r') as file:
 
 city = input ("Enter a city: ")
 
-for row in data:
+for row in data[1:]:
     if row[0] == city:
         print(row[1])
